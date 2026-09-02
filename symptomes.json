@@ -1,8 +1,8 @@
 {
   "meta": {
-    "version": "1.4",
+    "version": "1.5",
     "source": "19 modules de cours École Synergie Naturopathie",
-    "nb_symptomes": 23,
+    "nb_symptomes": 28,
     "note": "Symptômes croisés issus des 19 modules de cours, densifiés au fil de l'eau avec des sources externes scientifiques et naturopathiques clairement identifiées (préfixe « Source externe » au lieu de « Module X »)."
   },
   "symptomes": [
@@ -1411,6 +1411,247 @@
           }
         ],
         "remedes_de_secours": []
+      }
+    },
+    {
+      "symptome": "Hyperthyroïdie",
+      "systemes_impliques": [
+        {
+          "systeme": "Endocrinien",
+          "mecanisme": "Thyroïde en surrégime. Signes : goitre, protubérance des yeux, hyperactivité, irritabilité, amaigrissement, accélération du rythme cardiaque, peau moite, bouffées de chaleur, diarrhée, nausées. Causes possibles : la glande elle-même (maladie de Hashimoto, qui débute souvent par une hyperthyroïdie avant d'évoluer vers l'hypothyroïdie), une mauvaise transformation de la T4 en T3, ou des récepteurs cellulaires qui ne reçoivent pas l'hormone (carence en vitamine D, diabète).",
+          "module_source": "Module 13"
+        },
+        {
+          "systeme": "Immunitaire",
+          "mecanisme": "La maladie de Basedow est une maladie auto-immune touchant la thyroïde et entraînant une hyperthyroïdie (insomnie, hyperactivité, tremblements des mains, perte de cheveux, transpiration, perte de poids, diarrhée, tachycardie). Elle touche 5 femmes pour 1 homme.",
+          "module_source": "Module 32"
+        }
+      ],
+      "decodage_biologique": [],
+      "remedes": {
+        "alimentation": [],
+        "hydrologie": [],
+        "respiration": [],
+        "phytologie_plantes": [],
+        "bourgeons": [
+          {
+            "bourgeon": "Viorne lanthane",
+            "effet": "Aide à rééquilibrer une hyperthyroïdie ; aussi indiquée pour les terrains allergiques (bronchite, rhume des foins, asthme)",
+            "module_source": "Module 18"
+          }
+        ],
+        "huiles_essentielles_et_vegetales": [],
+        "fleurs_de_bach": [],
+        "mineraux_vitamines": [
+          {
+            "nom": "Vitamine D",
+            "effet": "Une carence peut contribuer à ce que les récepteurs des cellules cibles ne reçoivent pas correctement l'hormone thyroïdienne",
+            "module_source": "Module 13"
+          }
+        ],
+        "remedes_de_secours": []
+      }
+    },
+    {
+      "symptome": "Hypertension artérielle",
+      "systemes_impliques": [
+        {
+          "systeme": "Circulatoire",
+          "mecanisme": "« Si nous sommes sous pression, nous allons vers l'hypertension, et quand cela devient insupportable, quand nous lâchons prise, c'est la bascule vers l'hypotension. » Les artères (« vaisseaux remuants ») réagissent à la tension nerveuse par des spasmes ou des inflammations.",
+          "module_source": "Module 17"
+        },
+        {
+          "systeme": "Terrain / inflammation",
+          "mecanisme": "Citée parmi les principales causes des maladies cardio-vasculaires (première cause de mortalité mondiale : AVC, infarctus). Prévention par alimentation méditerranéenne, arrêt tabac/alcool, activité physique. En naturopathie, on prêtera attention à l'encrassement des humeurs (ralentit le débit sanguin) et à l'état inflammatoire des vaisseaux (les fragilise).",
+          "module_source": "Module 32"
+        },
+        {
+          "systeme": "Nerveux",
+          "mecanisme": "Une carence en acétylcholine peut se manifester, entre autres symptômes, par de l'hypertension.",
+          "module_source": "Module 8"
+        }
+      ],
+      "decodage_biologique": [
+        {
+          "sens": "L'hypertension est associée symboliquement à la pression que l'on ressent ; le lâcher-prise excessif faisant au contraire basculer vers l'hypotension.",
+          "module_source": "Module 17"
+        }
+      ],
+      "remedes": {
+        "alimentation": [
+          {
+            "conseil": "Alimentation méditerranéenne, éviter tabac et excès d'alcool, inclure du mouvement au quotidien",
+            "module_source": "Module 32"
+          }
+        ],
+        "hydrologie": [],
+        "respiration": [],
+        "phytologie_plantes": [
+          {
+            "plante": "Hibiscus (Hibiscus sabdariffa, karkadé/bissap)",
+            "forme": "Infusion",
+            "usage": "Une méta-analyse d'essais cliniques rapporte une baisse modeste de la pression systolique et diastolique avec une consommation régulière sur plusieurs semaines. Prudence en cas de prise simultanée d'antihypertenseurs",
+            "module_source": "Source externe : méta-analyse citée par Natura Force ; étude sur l'action vasorelaxante, Alsayed et al., Nutrients, 2020"
+          }
+        ],
+        "bourgeons": [],
+        "huiles_essentielles_et_vegetales": [
+          {
+            "nom": "Ashwagandha",
+            "usage": "Pourrait réduire le cortisol (hormone du stress qui, en excès chronique, nuit aux vaisseaux sanguins et favorise l'hypertension) ; preuves encore modestes mais croissantes sur un effet indirect sur la tension artérielle liée au stress chronique",
+            "module_source": "Source externe : méta-analyse Arumugam et al., 2024, citée par Greenwhey/Vitabase"
+          }
+        ],
+        "fleurs_de_bach": [],
+        "mineraux_vitamines": [],
+        "remedes_de_secours": []
+      }
+    },
+    {
+      "symptome": "Anxiété",
+      "systemes_impliques": [
+        {
+          "systeme": "Nerveux",
+          "mecanisme": "Le GABA (neurotransmetteur du calme) agit sur les amygdales, centre cérébral de la peur et de l'anxiété, en freinant leur activité. Une carence en acétylcholine peut aussi se manifester par de l'anxiété. Une défaillance du contrôle vagal conduit à une hyperactivité sympathique associée au stress, à la peur et à l'anxiété.",
+          "module_source": "Module 8"
+        }
+      ],
+      "decodage_biologique": [],
+      "remedes": {
+        "alimentation": [],
+        "hydrologie": [],
+        "respiration": [
+          {
+            "technique": "Cohérence cardiaque",
+            "effet": "Premier outil pour stimuler le nerf vague et réguler le système nerveux autonome, contrant l'hyperactivité sympathique liée à l'anxiété",
+            "module_source": "Module 8"
+          }
+        ],
+        "phytologie_plantes": [],
+        "bourgeons": [
+          {
+            "bourgeon": "Tilleul",
+            "effet": "Utile pour les migraines liées au stress, la boulimie, la dépression, l'insomnie, l'anxiété, les angoisses et les vertiges ; combinable avec l'aubépine",
+            "module_source": "Module 18"
+          },
+          {
+            "bourgeon": "Noisetier",
+            "effet": "Efficace pour les problèmes nerveux, l'anxiété, le surpoids nerveux, les névroses ; en synergie avec cassis et vigne vierge pour les douleurs articulaires",
+            "module_source": "Module 18"
+          }
+        ],
+        "huiles_essentielles_et_vegetales": [
+          {
+            "nom": "Ashwagandha",
+            "usage": "Étude prospective randomisée en double aveugle démontrant une amélioration de la résistance au stress et une réduction de l'anxiété chez l'adulte",
+            "module_source": "Source externe : Chandrasekhar et al., 2012, citée par Adrien Gagnon"
+          },
+          {
+            "nom": "L-théanine",
+            "usage": "Réduit la réponse physiologique au stress (dont la fréquence cardiaque) et favorise un état de calme sans somnolence",
+            "module_source": "Source externe : synthèse scientifique, Bmoove"
+          }
+        ],
+        "fleurs_de_bach": [
+          {
+            "fleur": "Aspen",
+            "profil_emotionnel": "Peurs inconnues, anxiété diffuse et non identifiable ; aide à se sentir protégé et ancré face à ces peurs",
+            "module_source": "Module 21"
+          },
+          {
+            "fleur": "Mimulus",
+            "profil_emotionnel": "Peurs connues et identifiables ; tempéraments timides qui accumulent de petites peurs, empêchant de s'ouvrir au monde",
+            "module_source": "Module 21"
+          }
+        ],
+        "mineraux_vitamines": [
+          {
+            "nom": "Magnésium",
+            "effet": "Corrige un déficit fréquent et soutient la régulation du stress ; ingrédient le mieux étudié en première intention pour l'anxiété et les attaques de panique",
+            "module_source": "Source externe : synthèse scientifique, Bmoove"
+          }
+        ],
+        "remedes_de_secours": []
+      }
+    },
+    {
+      "symptome": "Diabète de type 2",
+      "systemes_impliques": [
+        {
+          "systeme": "Endocrinien / digestif",
+          "mecanisme": "Maladie liée essentiellement à l'hygiène de vie. Les récepteurs cellulaires deviennent résistants à l'insuline (mécanisme de défense après dépassement d'un seuil de sécurité) ; la glycémie cesse alors de revenir à l'homéostasie, avec de grandes variations glycémiques. Complications possibles : cécité, nécrose. Réversible chez de nombreuses personnes via un changement alimentaire rigoureux (régime à IG bas, glucides bas, voire cétogène).",
+          "module_source": "Module 32"
+        }
+      ],
+      "decodage_biologique": [],
+      "remedes": {
+        "alimentation": [
+          {
+            "conseil": "Régime à index glycémique bas, voire pauvre en glucides ou cétogène, sous accompagnement naturopathique et suivi médical",
+            "module_source": "Module 32"
+          }
+        ],
+        "hydrologie": [],
+        "respiration": [],
+        "phytologie_plantes": [
+          {
+            "plante": "Berbérine",
+            "forme": "Complément alimentaire",
+            "usage": "L'actif naturel le mieux documenté contre le diabète de type 2 : plusieurs méta-analyses (37 à 50 essais contrôlés randomisés, plusieurs milliers de patients) montrent une réduction significative de la glycémie à jeun et de l'HbA1c (environ -0,6 à -0,7 point). Reste un complément, pas un substitut au traitement antidiabétique : nécessite un suivi médical du fait des risques d'interactions médicamenteuses et d'hypoglycémie",
+            "module_source": "Source externe : méta-analyses citées par La Compagnie des Sens et Le Monde du Microbiote, 2024-2026"
+          }
+        ],
+        "bourgeons": [],
+        "huiles_essentielles_et_vegetales": [],
+        "fleurs_de_bach": [],
+        "mineraux_vitamines": [],
+        "remedes_de_secours": []
+      }
+    },
+    {
+      "symptome": "Rhinite allergique / rhume des foins",
+      "systemes_impliques": [
+        {
+          "systeme": "Immunitaire",
+          "mecanisme": "Terrain allergique transmis par le génome. Les symptômes sont dus à la production d'histamine par les mastocytes (cellules du système immunitaire), entraînant le gonflement des muqueuses respiratoires.",
+          "module_source": "Module 20"
+        }
+      ],
+      "decodage_biologique": [],
+      "remedes": {
+        "alimentation": [],
+        "hydrologie": [],
+        "respiration": [],
+        "phytologie_plantes": [
+          {
+            "plante": "Quercétine",
+            "forme": "Complément alimentaire ou aliments riches (oignons rouges, pommes, câpres, thé, brocolis, noix)",
+            "usage": "Flavonoïde qui stabiliserait les membranes des mastocytes et inhiberait la libération d'histamine. Étude japonaise sur 66 adultes (200mg/jour pendant 4 semaines) montrant une amélioration significative des démangeaisons oculaires, éternuements, écoulement nasal et troubles du sommeil",
+            "module_source": "Source externe : étude citée par Vitabright et Julien Venesson"
+          }
+        ],
+        "bourgeons": [
+          {
+            "bourgeon": "Aulne glutineux, cassis, charme, églantier, viorne lanthane",
+            "effet": "Cités pour la rhinite",
+            "module_source": "Module 18"
+          },
+          {
+            "bourgeon": "Viorne lanthane",
+            "effet": "Terrains allergiques : bronchite, rhume des foins, asthme, allergies chroniques ; alternance possible avec l'aubépine",
+            "module_source": "Module 18"
+          }
+        ],
+        "huiles_essentielles_et_vegetales": [],
+        "fleurs_de_bach": [],
+        "mineraux_vitamines": [],
+        "remedes_de_secours": [
+          {
+            "remede": "Probiotiques",
+            "usage": "Renforcent le microbiote intestinal, modulent l'immunité et pourraient contribuer à bloquer les réactions allergiques aux pollens",
+            "module_source": "Source externe : synthèse citée par Bio Infos Santé"
+          }
+        ]
       }
     }
   ]
