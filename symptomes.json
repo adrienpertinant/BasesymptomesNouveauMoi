@@ -1,9 +1,9 @@
 {
   "meta": {
-    "version": "1.2",
+    "version": "1.4",
     "source": "19 modules de cours École Synergie Naturopathie",
     "nb_symptomes": 23,
-    "note": "Première vague de symptômes croisés. Les catégories de remèdes vides signifient qu'aucune mention n'a été trouvée dans les modules pour ce symptôme précis (pas une lacune de recherche)."
+    "note": "Symptômes croisés issus des 19 modules de cours, densifiés au fil de l'eau avec des sources externes scientifiques et naturopathiques clairement identifiées (préfixe « Source externe » au lieu de « Module X »)."
   },
   "symptomes": [
     {
@@ -395,7 +395,14 @@
         "alimentation": [],
         "hydrologie": [],
         "respiration": [],
-        "phytologie_plantes": [],
+        "phytologie_plantes": [
+          {
+            "plante": "Grande camomille (feverfew / Tanacetum parthenium)",
+            "forme": "Extrait de feuille séchée",
+            "usage": "Pourrait être efficace en prévention, notamment en association avec magnésium et coenzyme Q10 (75% des patients avec ≥50% de réduction des jours de migraine après 3 mois dans une étude)",
+            "module_source": "Source externe : étude observationnelle prospective, PMC5577764"
+          }
+        ],
         "bourgeons": [
           {
             "bourgeon": "Airelle",
@@ -405,7 +412,23 @@
         ],
         "huiles_essentielles_et_vegetales": [],
         "fleurs_de_bach": [],
-        "mineraux_vitamines": [],
+        "mineraux_vitamines": [
+          {
+            "nom": "Magnésium",
+            "effet": "Recommandé en prévention des migraines ; jusqu'à 50% des migraineux auraient un magnésium ionisé bas pendant les crises. Une étude a montré une réduction de 41,6% de la fréquence des crises sur 12 semaines (600 mg/jour)",
+            "module_source": "Source externe : Welch & Ramadan, J Neurol Sci, 1995 ; essai clinique cité par Medrea et al., Can J Neurol Sci, 2024"
+          },
+          {
+            "nom": "Riboflavine (vitamine B2)",
+            "effet": "Recommandée en prévention des migraines chez l'adulte ; réduction significative de la fréquence des crises à 400mg/jour dans un essai contrôlé",
+            "module_source": "Source externe : Updated Canadian Headache Society Migraine Prevention Guideline, 2024"
+          },
+          {
+            "nom": "Coenzyme Q10",
+            "effet": "Preuve de niveau C en prévention des migraines ; une étude a montré une réduction de plus de 50% des jours de migraine après 3 mois à 150mg/jour",
+            "module_source": "Source externe : Medrea et al., Can J Neurol Sci, 2024 ; Rozen et al., Cephalalgia, 2002"
+          }
+        ],
         "remedes_de_secours": []
       }
     },
@@ -499,6 +522,10 @@
           {
             "conseil": "Bonne mastication",
             "module_source": "Module 10"
+          },
+          {
+            "conseil": "Fibres solubles (psyllium/ispaghul) : le traitement de référence le mieux étudié pour la constipation chronique, augmentant la fréquence des selles, améliorant leur consistance et réduisant l'effort défécatoire (dose > 10g/jour pour une efficacité optimale)",
+            "module_source": "Source externe : méta-analyse, ICNS ; synthèse Vidal"
           }
         ],
         "hydrologie": [],
@@ -514,7 +541,13 @@
         "huiles_essentielles_et_vegetales": [],
         "fleurs_de_bach": [],
         "mineraux_vitamines": [],
-        "remedes_de_secours": []
+        "remedes_de_secours": [
+          {
+            "remede": "Oxyde de magnésium (200-400mg le soir)",
+            "usage": "Agit par effet osmotique en attirant l'eau dans l'intestin ; complémentaire du psyllium (qui agit par effet de volume)",
+            "module_source": "Source externe : synthèse scientifique, MaVitamine"
+          }
+        ]
       }
     },
     {
@@ -561,6 +594,11 @@
             "remede": "Charbon actif",
             "usage": "Absorbe les gaz responsables des ballonnements",
             "module_source": "Module 25"
+          },
+          {
+            "remede": "Probiotiques ciblés (souches spécifiques Lactobacillus/Bifidobacterium)",
+            "usage": "L'association de fibres solubles et de certaines bactéries lactiques accélère significativement le temps de transit et peut réduire les ballonnements",
+            "module_source": "Source externe : synthèse scientifique, MaVitamine"
           }
         ]
       }
@@ -699,13 +737,37 @@
         "alimentation": [],
         "hydrologie": [],
         "respiration": [],
-        "phytologie_plantes": [],
+        "phytologie_plantes": [
+          {
+            "plante": "Valériane",
+            "forme": "Extrait sec 300-600mg",
+            "usage": "Effet léger à modéré après 2-4 semaines de prise régulière ; agit sur les récepteurs GABA-A. Association classique avec le houblon (réduction de 50% du temps d'endormissement dans plusieurs études)",
+            "module_source": "Source externe : synthèse scientifique, Sommeil-Zen / BloomingYou"
+          },
+          {
+            "plante": "Passiflore",
+            "forme": "Extrait sec 500mg",
+            "usage": "Anxiolytique doux, facilite l'endormissement ; particulièrement indiquée pour l'insomnie liée à l'anxiété et aux ruminations plutôt que pour les réveils nocturnes. Étude en double aveugle contrôlée par placebo ayant montré une amélioration des paramètres polysomnographiques du sommeil",
+            "module_source": "Source externe : étude randomisée contrôlée citée par Nutripure"
+          }
+        ],
         "bourgeons": [],
         "huiles_essentielles_et_vegetales": [],
         "fleurs_de_bach": [],
-        "mineraux_vitamines": [],
-        "remedes_de_secours": [],
-        "a_completer": "Modules 18, 23 et 25 mentionnent chacun l'insomnie (3-5 occurrences) mais le détail des remèdes associés n'a pas encore été extrait précisément — à approfondir lors de la prochaine passe."
+        "mineraux_vitamines": [
+          {
+            "nom": "Magnésium (bisglycinate)",
+            "effet": "Améliore la qualité du sommeil, en particulier en cas de carence (présente chez 30-40% de la population) ; agit sur la relaxation musculaire et la régulation du GABA",
+            "module_source": "Source externe : synthèse scientifique, BloomingYou"
+          }
+        ],
+        "remedes_de_secours": [
+          {
+            "remede": "Mélatonine (0,5-3mg)",
+            "usage": "Réduit le temps d'endormissement de 15 à 30 minutes ; efficacité surtout si l'horloge biologique est déréglée (décalage horaire), moins probante si l'insomnie est due à l'anxiété",
+            "module_source": "Source externe : synthèse scientifique 2015-2023, BloomingYou"
+          }
+        ]
       }
     },
     {
@@ -1101,10 +1163,22 @@
             "module_source": "Module 18"
           }
         ],
-        "huiles_essentielles_et_vegetales": [],
+        "huiles_essentielles_et_vegetales": [
+          {
+            "nom": "Huile essentielle d'origan compact (carvacrol)",
+            "usage": "Riche en carvacrol et thymol, propriétés antifongiques documentées contre le candida albicans ; agit sur la membrane du champignon durant sa phase de sporulation. Souvent utilisée en synergie avec clou de girofle, cannelle de Ceylan et citron, en cure de 20 jours",
+            "module_source": "Source externe : synthèse scientifique, Mon-Aromathérapie-Bio / Alma Consult Paris"
+          }
+        ],
         "fleurs_de_bach": [],
         "mineraux_vitamines": [],
-        "remedes_de_secours": []
+        "remedes_de_secours": [
+          {
+            "remede": "Probiotiques ciblés (Lactobacillus rhamnosus, Saccharomyces boulardii)",
+            "usage": "Réduisent l'adhésion et la virulence du candida albicans ; à privilégier après un traitement antifongique pour restaurer la flore, en association avec des prébiotiques (inuline, pectine)",
+            "module_source": "Source externe : études citées par LaNutrition-Sante.ch (Tomicic 2016, Krasowska 2009)"
+          }
+        ]
       }
     },
     {
@@ -1131,7 +1205,14 @@
         "alimentation": [],
         "hydrologie": [],
         "respiration": [],
-        "phytologie_plantes": [],
+        "phytologie_plantes": [
+          {
+            "plante": "Curcuma (curcumine)",
+            "forme": "Extrait standardisé",
+            "usage": "Puissant anti-inflammatoire et antioxydant ; des recherches suggèrent un potentiel de réduction de l'inflammation et de l'inconfort associés à la douleur du nerf sciatique et aux hernies discales. Souvent associé à l'harpagophytum et au gingembre pour les inflammations articulaires",
+            "module_source": "Source externe : synthèse scientifique, Curcumideal / Mr-Ginseng ; étude sur cellules du disque intervertébral, Klawitter et al., 2012"
+          }
+        ],
         "bourgeons": [
           {
             "bourgeon": "Bouleau verruqueux",
@@ -1170,7 +1251,14 @@
         "alimentation": [],
         "hydrologie": [],
         "respiration": [],
-        "phytologie_plantes": [],
+        "phytologie_plantes": [
+          {
+            "plante": "Gattilier (Vitex agnus-castus)",
+            "forme": "Teinture mère, extrait sec ou fruit sec",
+            "usage": "Utilisé depuis l'Antiquité pour les affections féminines ; étude randomisée contrôlée par placebo (128 patientes) montrant une réduction des symptômes du SPM, efficacité comparable ou parfois supérieure à la vitamine B6 dans certaines études comparatives",
+            "module_source": "Source externe : étude randomisée, Acta Medica Iranica, 2012 ; synthèse AltheaProvence"
+          }
+        ],
         "bourgeons": [
           {
             "bourgeon": "Framboisier",
@@ -1180,7 +1268,18 @@
         ],
         "huiles_essentielles_et_vegetales": [],
         "fleurs_de_bach": [],
-        "mineraux_vitamines": [],
+        "mineraux_vitamines": [
+          {
+            "nom": "Vitamine B6 (pyridoxine)",
+            "effet": "Efficace pour réduire sautes d'humeur, douleurs aux seins et autres symptômes prémenstruels dans des essais regroupant plus de 1600 femmes ; à prendre tout au long du mois, pas seulement avant les règles",
+            "module_source": "Source externe : méta-analyse Canning, Waterman & Dye, Journal of Reproductive and Infant Psychology, 2006"
+          },
+          {
+            "nom": "Calcium",
+            "effet": "Efficace sur les symptômes prémenstruels dans des essais regroupant plus de 1000 femmes (750-1200mg deux fois par jour, pendant au moins 3 cycles)",
+            "module_source": "Source externe : méta-analyse Canning, Waterman & Dye, Journal of Reproductive and Infant Psychology, 2006"
+          }
+        ],
         "remedes_de_secours": []
       }
     },
@@ -1240,11 +1339,25 @@
         "alimentation": [],
         "hydrologie": [],
         "respiration": [],
-        "phytologie_plantes": [],
+        "phytologie_plantes": [
+          {
+            "plante": "Curcuma (curcumine)",
+            "forme": "Extrait standardisé",
+            "usage": "Des études précliniques montrent une efficacité de la curcumine pour prévenir et améliorer le déclin cognitif (diminution de l'inflammation neuronale et amélioration du statut antioxydant) ; résultats des études cliniques chez l'humain encore hétérogènes",
+            "module_source": "Source externe : synthèse scientifique, Nature Sciences Santé, 2018"
+          }
+        ],
         "bourgeons": [],
         "huiles_essentielles_et_vegetales": [],
         "fleurs_de_bach": [],
-        "mineraux_vitamines": [],
+        "mineraux_vitamines": [
+          {
+            "nom": "Oméga-3 (DHA/EPA)",
+            "effet": "Le DHA, intégré aux membranes des neurones, faciliterait la transmission des messages nerveux. Une revue systématique de 2022 associe une consommation suffisante d'oméga-3 à de meilleures performances cognitives globales, attention et concentration",
+            "sources_alimentaires": "Poissons gras (saumon, maquereau, sardine), huile de colza/lin, noix",
+            "module_source": "Source externe : revue systématique Dighriri et al., 2022, citée par Greenwhey"
+          }
+        ],
         "remedes_de_secours": []
       }
     },
@@ -1271,7 +1384,32 @@
         "bourgeons": [],
         "huiles_essentielles_et_vegetales": [],
         "fleurs_de_bach": [],
-        "mineraux_vitamines": [],
+        "mineraux_vitamines": [
+          {
+            "nom": "Sélénium",
+            "effet": "Cofacteur de l'enzyme qui convertit la T4 en T3 active ; protège la thyroïde du stress oxydatif ; pourrait réduire les anticorps anti-TPO en cas de thyroïdite de Hashimoto",
+            "sources_alimentaires": "Noix du Brésil (1-2/jour suffisent), fruits de mer, thon",
+            "module_source": "Source externe : essai clinique randomisé, Mahmoodianfard et al., J Am Coll Nutr, 2015"
+          },
+          {
+            "nom": "Zinc",
+            "effet": "Cofacteur de la synthèse des hormones thyroïdiennes et de la conversion T4→T3 ; niveaux souvent plus bas chez les patients hypothyroïdiens",
+            "sources_alimentaires": "Huîtres, viande rouge, graines de courge, foie de veau",
+            "module_source": "Source externe : synthèse scientifique, LaNutrition.fr"
+          },
+          {
+            "nom": "Iode",
+            "effet": "Brique de base des hormones T3/T4 ; sa carence reste une cause majeure d'hypothyroïdie dans le monde, en particulier en zones de montagne éloignées de la mer. Attention : un excès d'iode sans apport suffisant en sélénium peut être contre-productif",
+            "sources_alimentaires": "Sel iodé, poissons, algues (avec modération), produits laitiers",
+            "module_source": "Source externe : synthèse scientifique, Planète Santé / LaNutrition.fr"
+          },
+          {
+            "nom": "Fer",
+            "effet": "Une carence altère la réponse hormonale (TRH) et diminue les taux de TSH, T3 et T4",
+            "sources_alimentaires": "Viandes rouges, boudin noir, abats",
+            "module_source": "Source externe : synthèse scientifique, Nutri'n Fit"
+          }
+        ],
         "remedes_de_secours": []
       }
     }
