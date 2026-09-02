@@ -384,7 +384,7 @@ function renderSuggestions(filterText) {
   if (!DATA) return;
   const list = DATA.symptomes.filter(s => norm(s.symptome).includes(norm(filterText)));
   const toShow = filterText ? list : DATA.symptomes;
-  toShow.slice(0, 12).forEach(s => {
+    toShow.forEach(s => {
     const chip = document.createElement('span');
     chip.className = 'chip';
     chip.textContent = s.symptome;
