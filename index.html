@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Base symptômes — Nouveau Moi</title>
+<style>
+  :root {
+    --moss: #3f5b41;
+    --moss-dark: #2b4029;
+    --leaf: #7a9b6e;
+    --bark: #6b5645;
+    --cream: #f7f5ef;
+    --paper: #ffffff;
+    --ink: #2a2e27;
+    --ink-soft: #565f52;
+    --line: #e2e0d5;
+    --accent: #c98a4b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Iowan Old Style', 'Georgia', serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  header {
+    background: var(--moss-dark);
+    color: var(--cream);
+    padding: 2.2rem 1.5rem 1.6rem;
+    text-align: center;
+  }
+  header h1 {
+    font-weight: 500;
+    font-size: 1.6rem;
+    letter-spacing: 0.02em;
+    margin: 0 0 0.3rem;
+  }
+  header p {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.85rem;
+    color: #cfd9c8;
+    margin: 0;
+  }
+  .search-wrap {
+    max-width: 640px;
+    margin: -1.4rem auto 0;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 5;
+  }
+  #search {
+    width: 100%;
+    padding: 0.9rem 1.1rem;
+    font-size: 1.05rem;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    box-shadow: 0 4px 16px rgba(43,64,41,0.15);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    outline: none;
+  }
+  #search:focus { border-color: var(--leaf); }
+  main {
+    max-width: 780px;
+    margin: 2rem auto 4rem;
+    padding: 0 1rem;
+  }
+  #suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 1.1rem 0 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  .chip {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    color: var(--moss-dark);
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    cursor: pointer;
+  }
+  .chip:hover { background: #eef1e9; }
+  #empty {
+    text-align: center;
+    color: var(--ink-soft);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin-top: 3rem;
+    font-size: 0.95rem;
+  }
+  .fiche {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.8rem 1.9rem;
+    margin-top: 1.8rem;
+  }
+  .fiche h2 {
+    margin: 0 0 1.2rem;
+    font-size: 1.5rem;
+    color: var(--moss-dark);
+    font-weight: 600;
+  }
+  .section-label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--leaf);
+    font-weight: 600;
+    margin: 1.6rem 0 0.7rem;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 0.35rem;
+  }
+  .systeme-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 0.9rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed var(--line);
+    align-items: baseline;
+  }
+  .systeme-row:last-child { border-bottom: none; }
+  .systeme-name {
+    font-weight: 600;
+    color: var(--bark);
+    font-size: 0.92rem;
+  }
+  .systeme-mecanisme {
+    font-size: 0.94rem;
+    color: var(--ink);
+  }
+  .source-tag {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.72rem;
+    color: #9aa294;
+    display: block;
+    margin-top: 0.2rem;
+  }
+  .decodage {
+    background: #f4f0e6;
+    border-left: 3px solid var(--accent);
+    padding: 0.7rem 1rem;
+    margin-bottom: 0.6rem;
+    font-style: italic;
+    font-size: 0.94rem;
+    border-radius: 0 6px 6px 0;
+  }
+  .remede-cat {
+    margin-bottom: 1rem;
+  }
+  .remede-cat-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+    font-size: 0.86rem;
+    color: var(--moss);
+    margin-bottom: 0.4rem;
+  }
+  .remede-item {
+    font-size: 0.92rem;
+    padding: 0.4rem 0 0.4rem 0.9rem;
+    border-left: 2px solid #dfe6d8;
+    margin-bottom: 0.35rem;
+  }
+  .remede-item b { color: var(--ink); }
+  .no-data {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.85rem;
+    color: #a8ada2;
+    font-style: italic;
+  }
+  footer {
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    padding: 1rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Base symptômes croisés</h1>
+  <p>Nouveau Moi · École Synergie Naturopathie — v1, 11 symptômes</p>
+</header>
+
+<div class="search-wrap">
+  <input id="search" type="text" placeholder="Cherche un symptôme (ex : fatigue, arthrose, insomnie…)" autofocus>
+  <div id="suggestions"></div>
+</div>
+
+<main>
+  <div id="empty"></div>
+  <div id="results"></div>
+</main>
+
+<footer>Base de test — 11 symptômes extraits de 19 modules de cours. À enrichir progressivement.</footer>
+
+<script>
+const DATA = {"meta": {"version": "1.0 - lot de test", "source": "19 modules de cours École Synergie Naturopathie", "nb_symptomes": 11, "note": "Première vague de symptômes croisés. Les catégories de remèdes vides signifient qu'aucune mention n'a été trouvée dans les modules pour ce symptôme précis (pas une lacune de recherche)."}, "symptomes": [{"symptome": "Perte de cheveux", "systemes_impliques": [{"systeme": "Endocrinien", "mecanisme": "Signe classique d'hypothyroïdie (avec ongles cassants, extrémités froides, frilosité, fatigue). Présent aussi en hyperthyroïdie (maladie de Basedow). La maladie de Hashimoto (auto-immune) l'entraîne via l'hypothyroïdie qu'elle installe.", "module_source": "Module 13, Module 32"}, {"systeme": "Circulatoire", "mecanisme": "Les cheveux ne sont pas desservis par le réseau capillaire sanguin, contrairement au reste du corps — donc particulièrement sensibles à une mauvaise circulation ou une carence en nutriments transportés par le sang.", "module_source": "Module 17"}, {"systeme": "Terrain / diathèse", "mecanisme": "Associée à une diathèse marquée par des dérèglements hormonaux et des cycles menstruels anarchiques ; signe transitoire d'un changement de diathèse.", "module_source": "Module 32"}], "decodage_biologique": [{"sens": "Les cheveux sont associés à la vitalité et à l'énergie. Expressions symboliques citées : « se faire des cheveux » = soucis, « s'arracher les cheveux » = impuissance. Proverbe chinois cité : « les reins fleurissent dans les cheveux ».", "module_source": "Module 8"}], "remedes": {"alimentation": [], "hydrologie": [], "respiration": [], "phytologie_plantes": [{"plante": "Bardane", "forme": "Lotion de feuilles", "usage": "Prévient la chute des cheveux", "module_source": "Module 14"}], "bourgeons": [], "huiles_essentielles_et_vegetales": [{"nom": "Huile d'argan", "usage": "Nourrit, embellit peau/cheveux/ongles", "module_source": "Module 23"}, {"nom": "Huile d'avocat", "usage": "Fortifie les cheveux et stimule la pousse", "module_source": "Module 23"}], "fleurs_de_bach": [], "mineraux_vitamines": [{"nom": "Vitamine B8 (biotine)", "sources_alimentaires": "Riz complet, fruits, oléagineux, lait, abats, œufs crus", "effet": "Empêche la chute des cheveux", "module_source": "Module 11"}, {"nom": "Soufre", "sources_alimentaires": "Œufs, produits laitiers, oignon, ail, radis, poivrons rouges, légumineuses, céréales", "effet": "Carence associée à chute de cheveux, pellicules", "module_source": "Module 25"}, {"nom": "Magnésium", "sources_alimentaires": "Chlorure/citrate de magnésium", "effet": "Carence associée à cheveux cassants et mous", "module_source": "Module 25"}], "remedes_de_secours": [{"remede": "Pollen", "usage": "Cure reminéralisante contre la chute des cheveux", "module_source": "Module 25"}, {"remede": "Gelée royale", "usage": "Cure contre chute des cheveux, fragilité des ongles", "module_source": "Module 25"}]}}, {"symptome": "Diarrhée", "systemes_impliques": [{"systeme": "Digestif", "mecanisme": "Réponse physiologique et salutaire du corps pour retrouver l'homéostasie (comme les vomissements). Peut aussi signaler une dysbiose intestinale ou un syndrome du côlon irritable (alternance diarrhée/constipation) lié à des contractions intestinales trop rapides.", "module_source": "Module 10"}, {"systeme": "Nerveux (stress)", "mecanisme": "Le stress chronique ralentit/dérègle le tractus gastro-intestinal → diarrhées ou constipations, spasmes intestinaux, côlon irritable. Peut aussi relever d'une empreinte épigénétique transgénérationnelle.", "module_source": "Module 8"}, {"systeme": "Endocrinien", "mecanisme": "Symptôme d'hyperthyroïdie et de la maladie de Basedow.", "module_source": "Module 13, Module 32"}, {"systeme": "Terrain / diathèse", "mecanisme": "Alternance constipation/diarrhée citée comme marqueur d'une diathèse précise, avec problèmes ORL et articulaires associés.", "module_source": "Module 32"}], "decodage_biologique": [{"sens": "L'intestin grêle est celui qui « juge » ce qui peut être assimilé et ce qui doit être rejeté. La diarrhée est le signe d'une difficulté à laisser pénétrer et accepter les expériences de vie sans jugement.", "module_source": "Module 10"}], "remedes": {"alimentation": [{"conseil": "Réhydratation abondante (3-4L d'eau/jour en cas de perte hydrique)", "module_source": "Module 10"}, {"conseil": "Probiotiques, bouillons d'os/d'arête, glutamine, aloe vera par voie interne (cicatrisant intestinal)", "module_source": "Module 10"}], "hydrologie": [{"remede": "Eau de Quinton", "usage": "En cure, indiquée explicitement en cas de diarrhées", "module_source": "Module 5"}], "respiration": [], "phytologie_plantes": [], "bourgeons": [{"bourgeon": "Noyer", "effet": "Bourgeon des intestins, en synergie avec la vigne pour cicatriser la paroi intestinale", "module_source": "Module 18"}, {"bourgeon": "Airelle, figuier, genévrier, tilleul", "effet": "Cités en synergie possible pour la diarrhée", "module_source": "Module 18"}], "huiles_essentielles_et_vegetales": [], "fleurs_de_bach": [], "mineraux_vitamines": [], "remedes_de_secours": [{"remede": "Charbon actif", "usage": "Capte les bactéries/déchets responsables des diarrhées", "module_source": "Module 25"}, {"remede": "Argile riche en magnésium", "usage": "Émonctoire digestif", "module_source": "Module 25"}]}}, {"symptome": "Arthrose", "systemes_impliques": [{"systeme": "Ostéo-musculaire", "mecanisme": "Arthropathie chronique dégénérative (non inflammatoire), douleur mécanique et diurne. Distinction importante : l'arthrose dégrade les tissus (irréversible), contrairement à l'arthrite qui est une inflammation réversible du cartilage.", "module_source": "Module 15, Module 32"}, {"systeme": "Circulatoire", "mecanisme": "Un défaut d'irrigation de l'os peut entraîner une nécrose des extrémités osseuses, à l'origine de l'arthrose.", "module_source": "Module 32"}, {"systeme": "Endocrinien", "mecanisme": "La ménopause est une période propice à l'apparition de l'arthrose : les hormones sexuelles protégeraient les articulations, leur disparition fragiliserait la zone.", "module_source": "Module 32"}, {"systeme": "Terrain / inflammation", "mecanisme": "Peut résulter d'une inflammation chronique silencieuse, elle-même liée à un excès de déchets acides (toxémie).", "module_source": "Module 3, Module 32"}, {"systeme": "Nerveux", "mecanisme": "Citée comme cause structurelle possible de maux de tête (« arthrose cervicale »).", "module_source": "Module 8"}], "decodage_biologique": [{"sens": "Hanche : articulation liée aux croyances profondes — douleurs/blocages/arthrose signalent une déstabilisation du système de croyances (trahison, abandon, injustice).", "module_source": "Module 15"}, {"sens": "Genou : lié à l'acceptation — le genou « sait » qu'on comprend un changement mentalement sans l'accepter en profondeur.", "module_source": "Module 15"}], "remedes": {"alimentation": [{"conseil": "Minéral : Soufre", "aliments": "Œufs, produits laitiers, oignon, ail, radis, poivrons rouges, légumineuses, céréales — recommandé spécifiquement en cas d'arthrose", "module_source": "Module 11"}], "hydrologie": [{"remede": "Eau de Quinton", "usage": "Cure de reminéralisation articulaire", "module_source": "Module 5"}, {"remede": "Sauna infrarouge", "usage": "Détente, anti-inflammatoire, anti-douleur, recommandé pour arthrose/arthrite/rhumatisme/fibromyalgie", "module_source": "Module 5"}], "respiration": [], "phytologie_plantes": [], "bourgeons": [{"bourgeon": "Bouleau verruqueux", "effet": "Reminéralisant, problèmes articulaires/osseux", "module_source": "Module 18"}, {"bourgeon": "Pin", "effet": "« Bourgeon pompier », répare le cartilage abîmé, indiqué aussi pour l'ostéoporose", "module_source": "Module 18"}, {"bourgeon": "Vigne vierge", "effet": "Aide tendons, ligaments, cartilages", "module_source": "Module 18"}, {"bourgeon": "Synergie conseillée", "effet": "Cassis + bouleau + pin pour l'arthrose", "module_source": "Module 18"}], "huiles_essentielles_et_vegetales": [{"nom": "Macérât huileux de millepertuis", "usage": "Anti-inflammatoire et décontracturant musculaire (arthrose, arthrite)", "module_source": "Module 23"}], "fleurs_de_bach": [], "mineraux_vitamines": [], "remedes_de_secours": [{"remede": "Venin d'abeilles (apithérapie)", "usage": "Puissant anti-inflammatoire et antalgique, indiqué en cas d'arthrose, arthrite, sciatique, lumbago, polyarthrite", "module_source": "Module 25"}]}}, {"symptome": "Fatigue", "systemes_impliques": [{"systeme": "Endocrinien", "mecanisme": "Signe d'hypothyroïdie. En cas de burn-out, les surrénales épuisées ne fournissent plus assez de cortisol → fatigue chronique + problèmes inflammatoires + parfois dépression/anxiété.", "module_source": "Module 13"}, {"systeme": "Digestif", "mecanisme": "Une mauvaise digestion entraîne une mauvaise assimilation des nutriments, donc un risque de déminéralisation et de fatigue.", "module_source": "Module 11"}, {"systeme": "Nerveux", "mecanisme": "Un niveau trop faible de GABA (neurotransmetteur du retour au calme) se traduit notamment par de la fatigue, associée à anxiété, brouillard mental, insomnie.", "module_source": "Module 8"}, {"systeme": "Terrain / diathèse", "mecanisme": "Fatigue qui survient en cours de journée = signe de diathèse 2. La fibromyalgie et la dépression incluent une fatigue intense (asthénie) comme symptôme central.", "module_source": "Module 32"}], "decodage_biologique": [], "remedes": {"alimentation": [], "hydrologie": [], "respiration": [], "phytologie_plantes": [], "bourgeons": [{"bourgeon": "Cassis", "effet": "Fait des merveilles pour les personnes asthéniques (fatigue physique, intellectuelle, sexuelle)", "module_source": "Module 18"}, {"bourgeon": "Figuier", "effet": "Très revitalisant, permet de surmonter les fatigues et renforce l'immunité", "module_source": "Module 18"}, {"bourgeon": "Airelle", "effet": "Cité pour la fatigue chronique", "module_source": "Module 18"}], "huiles_essentielles_et_vegetales": [], "fleurs_de_bach": [], "mineraux_vitamines": [{"nom": "Magnésium (chlorure)", "effet": "Élévation du niveau de vitalité, fatigue diminuée, meilleure clarté mentale, conseillé après une maladie infectieuse", "module_source": "Module 25"}, {"nom": "Zinc", "effet": "Carence associée à fatigue, asthénie", "module_source": "Module 25"}, {"nom": "Fer", "effet": "Carence associée à fatigue, asthénie", "module_source": "Module 25"}], "remedes_de_secours": [{"remede": "Gelée royale", "usage": "Indiquée pour grande fatigue physique, neurasthénie, vieillissement prématuré", "module_source": "Module 25"}, {"remede": "Pollen", "usage": "Fatigue, asthénie", "module_source": "Module 25"}]}}, {"symptome": "Migraines / céphalées", "systemes_impliques": [{"systeme": "Digestif", "mecanisme": "Cause fréquente et souvent hépatique.", "module_source": "Module 8"}, {"systeme": "Circulatoire", "mecanisme": "Cause vasculaire (migraines proprement dites).", "module_source": "Module 8"}, {"systeme": "Ostéo-musculaire", "mecanisme": "Cause structurelle : tension musculaire, problème ostéopathique, arthrose cervicale.", "module_source": "Module 8"}, {"systeme": "Immunitaire", "mecanisme": "Cause allergique : souvent allergie alimentaire, terrain arthritique.", "module_source": "Module 8"}, {"systeme": "Nerveux", "mecanisme": "Céphalées de tension liées à l'anxiété et la fatigue.", "module_source": "Module 8"}, {"systeme": "Endocrinien", "mecanisme": "Cause hormonale : syndrome prémenstruel.", "module_source": "Module 8"}], "decodage_biologique": [{"sens": "Lorsque la migraine récidive, c'est que le refoulement de l'affectif a pris le dessus.", "module_source": "Module 8"}], "remedes": {"alimentation": [], "hydrologie": [], "respiration": [], "phytologie_plantes": [], "bourgeons": [{"bourgeon": "Airelle", "effet": "Citée pour les migraines allergiques", "module_source": "Module 18"}], "huiles_essentielles_et_vegetales": [], "fleurs_de_bach": [], "mineraux_vitamines": [], "remedes_de_secours": []}}, {"symptome": "Eczéma", "systemes_impliques": [{"systeme": "Immunitaire", "mecanisme": "Symptôme d'hyperactivité du système immunitaire de type allergique (avec rhinites, asthme, œdème de Quincke) — production d'histamine par les mastocytes.", "module_source": "Module 20"}, {"systeme": "Digestif", "mecanisme": "L'hyperporosité intestinale, en laissant passer des protéines étrangères, peut se manifester par des problèmes de peau comme l'eczéma.", "module_source": "Module 11"}, {"systeme": "Nerveux (stress)", "mecanisme": "Cité parmi les troubles cutanés liés au stress chronique (avec psoriasis, urticaire).", "module_source": "Module 8"}], "decodage_biologique": [], "remedes": {"alimentation": [{"conseil": "Éviction du gluten et de la caséine en cas d'hyperporosité intestinale associée", "module_source": "Module 20"}], "hydrologie": [{"remede": "Eau de Quinton", "usage": "Problèmes cutanés (psoriasis, acné, démangeaisons)", "module_source": "Module 5"}], "respiration": [], "phytologie_plantes": [], "bourgeons": [{"bourgeon": "Noyer", "effet": "Problèmes cutanés : verrues, eczéma sec ou suintant", "module_source": "Module 18"}], "huiles_essentielles_et_vegetales": [{"nom": "Huile de coco", "usage": "Apaisante : rougeurs, coups de soleil, psoriasis, dermatite et eczéma", "module_source": "Module 23"}, {"nom": "Huile de nigelle", "usage": "Anti-inflammatoire : acné, abcès, eczéma, psoriasis", "module_source": "Module 23"}], "fleurs_de_bach": [], "mineraux_vitamines": [], "remedes_de_secours": []}}, {"symptome": "Constipation", "systemes_impliques": [{"systeme": "Digestif", "mecanisme": "Deux types : de transit (péristaltisme ralenti, selles trop longtemps dans le côlon) ou d'évacuation (selles accumulées dans le rectum, difficiles à expulser).", "module_source": "Module 10"}, {"systeme": "Nerveux (stress)", "mecanisme": "Le stress chronique ralentit le tractus gastro-intestinal. Un GABA bas est aussi associé à la constipation.", "module_source": "Module 8"}, {"systeme": "Terrain / diathèse", "mecanisme": "Alternance diarrhée/constipation citée comme marqueur de diathèse.", "module_source": "Module 32"}], "decodage_biologique": [{"sens": "En MTC, la retenue excessive (timidité, retenue d'expression par peur de se tromper) se manifeste par des douleurs, gaz, ballonnements, constipation — lié à l'élément Terre.", "module_source": "Module 10"}], "remedes": {"alimentation": [{"conseil": "Bonne mastication", "module_source": "Module 10"}], "hydrologie": [], "respiration": [], "phytologie_plantes": [], "bourgeons": [{"bourgeon": "Airelle rouge", "effet": "Adaptogène intestinal, aide tant pour les constipations que pour les diarrhées", "module_source": "Module 18"}], "huiles_essentielles_et_vegetales": [], "fleurs_de_bach": [], "mineraux_vitamines": [], "remedes_de_secours": []}}, {"symptome": "Ballonnements", "systemes_impliques": [{"systeme": "Digestif", "mecanisme": "Mastication insuffisante, gastrite, anomalies de la sensibilité intestinale, dysbiose du microbiote.", "module_source": "Module 10"}, {"systeme": "Nutritionnel", "mecanisme": "Mauvaises associations alimentaires (créent acides, alcool, gaz putrides) ; hyperporosité intestinale.", "module_source": "Module 11"}, {"systeme": "Nerveux / MTC", "mecanisme": "La retenue émotionnelle (timidité, peur de se tromper) se manifeste par des ballonnements.", "module_source": "Module 10"}], "decodage_biologique": [{"sens": "Voir constipation — même mécanisme MTC de rétention/retenue.", "module_source": "Module 10"}], "remedes": {"alimentation": [{"conseil": "Bonne mastication ; bonnes associations alimentaires : lipides + légumes verts, protéines + légumes verts, protéines + eau bue avant le repas", "module_source": "Module 11"}], "hydrologie": [], "respiration": [], "phytologie_plantes": [], "bourgeons": [], "huiles_essentielles_et_vegetales": [], "fleurs_de_bach": [], "mineraux_vitamines": [], "remedes_de_secours": [{"remede": "Charbon actif", "usage": "Absorbe les gaz responsables des ballonnements", "module_source": "Module 25"}]}}, {"symptome": "Ostéoporose", "systemes_impliques": [{"systeme": "Ostéo-musculaire", "mecanisme": "Destruction de l'architecture osseuse : la minéralisation de la trame est normale, mais la trame est réduite, rendant les os fragiles et les fractures plus fréquentes.", "module_source": "Module 15"}, {"systeme": "Endocrinien", "mecanisme": "Les hormones sexuelles protègeraient les articulations et les os ; leur disparition à la ménopause entraîne une fragilité accrue.", "module_source": "Module 32"}], "decodage_biologique": [{"sens": "Renvoie à l'archétype de la femme, plus précisément l'image de la femme qui procrée — l'ostéoporose traduirait une perte inconsciente (le module coupe la phrase à ce niveau, sens à approfondir).", "module_source": "Module 15"}], "remedes": {"alimentation": [{"conseil": "Minéral : Calcium", "aliments": "Cité pour la consolidation des fractures et l'ostéoporose", "module_source": "Module 25"}], "hydrologie": [{"remede": "Eau de Quinton", "usage": "Cure conseillée pour les personnes atteintes d'ostéoporose", "module_source": "Module 5"}], "respiration": [], "phytologie_plantes": [], "bourgeons": [{"bourgeon": "Bouleau verruqueux", "effet": "Reminéralisant, problèmes articulaires/osseux, ostéoporose", "module_source": "Module 18"}, {"bourgeon": "Airelle rouge", "effet": "Ostéoporose post-ménopause, en synergie avec le pin de montagne", "module_source": "Module 18"}, {"bourgeon": "Pin", "effet": "Indiqué pour l'ostéoporose, en synergie avec ronce et airelle sur une cure de trois mois", "module_source": "Module 18"}], "huiles_essentielles_et_vegetales": [], "fleurs_de_bach": [], "mineraux_vitamines": [], "remedes_de_secours": []}}, {"symptome": "Acné", "systemes_impliques": [{"systeme": "Cutané / hormonal", "mecanisme": "Maladie des follicules pilo-sébacés touchant surtout le visage et le haut du dos, favorisée par une prédisposition héréditaire. À la puberté, l'augmentation des androgènes stimule la production de sébum ; la progestérone explique les poussées prémenstruelles.", "module_source": "Module 8"}, {"systeme": "Digestif", "mecanisme": "L'hyperporosité intestinale peut se manifester par des problèmes de peau incluant l'acné.", "module_source": "Module 11"}], "decodage_biologique": [{"sens": "Mal dans sa peau, manque de confiance en soi : repousser le contact.", "module_source": "Module 8"}], "remedes": {"alimentation": [], "hydrologie": [{"remede": "Eau de Quinton", "usage": "Citée pour les problèmes cutanés dont l'acné", "module_source": "Module 5"}], "respiration": [], "phytologie_plantes": [], "bourgeons": [], "huiles_essentielles_et_vegetales": [{"nom": "Synergie arbre à thé (tea tree) + menthe poivrée + géranium", "usage": "Diluées dans une huile végétale", "module_source": "Module 8"}, {"nom": "Huile de nigelle", "usage": "Anti-inflammatoire : acné, abcès, eczéma, psoriasis", "module_source": "Module 23"}], "fleurs_de_bach": [], "mineraux_vitamines": [{"nom": "Soufre", "effet": "Carence associée à acné, urticaire, allergies", "module_source": "Module 25"}], "remedes_de_secours": []}}, {"symptome": "Insomnie", "systemes_impliques": [{"systeme": "Nerveux", "mecanisme": "Deux types : difficulté à s'endormir (temps d'endormissement > 30 min) ou réveil au milieu de la nuit. Un GABA bas (neurotransmetteur du retour au calme) est associé à l'insomnie, ainsi qu'à l'anxiété et au brouillard mental. Le stress chronique est un facteur aggravant.", "module_source": "Module 8"}], "decodage_biologique": [{"sens": "L'insomnie n'est pas une maladie en soi mais une des « sonnettes d'alarme » d'un déséquilibre dans l'état de santé psychosomatique de la personne, qui doit l'inciter à revoir ses conditions de vie.", "module_source": "Module 8"}], "remedes": {"alimentation": [], "hydrologie": [], "respiration": [], "phytologie_plantes": [], "bourgeons": [], "huiles_essentielles_et_vegetales": [], "fleurs_de_bach": [], "mineraux_vitamines": [], "remedes_de_secours": [], "a_completer": "Modules 18, 23 et 25 mentionnent chacun l'insomnie (3-5 occurrences) mais le détail des remèdes associés n'a pas encore été extrait précisément — à approfondir lors de la prochaine passe."}}]};
+const LABELS = {"alimentation": "Alimentation", "hydrologie": "Hydrologie", "respiration": "Respiration", "phytologie_plantes": "Phytologie (plantes)", "bourgeons": "Bourgeons (gemmothérapie)", "huiles_essentielles_et_vegetales": "Huiles essentielles & végétales", "fleurs_de_bach": "Fleurs de Bach", "mineraux_vitamines": "Minéraux & vitamines", "remedes_de_secours": "Remèdes de secours"};
+
+const searchInput = document.getElementById('search');
+const resultsEl = document.getElementById('results');
+const emptyEl = document.getElementById('empty');
+const suggestionsEl = document.getElementById('suggestions');
+
+function norm(s) {
+  return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+function renderSuggestions(filterText) {
+  suggestionsEl.innerHTML = '';
+  const list = DATA.symptomes.filter(s => norm(s.symptome).includes(norm(filterText)));
+  const toShow = filterText ? list : DATA.symptomes;
+  toShow.slice(0, 12).forEach(s => {
+    const chip = document.createElement('span');
+    chip.className = 'chip';
+    chip.textContent = s.symptome;
+    chip.onclick = () => { searchInput.value = s.symptome; renderResults(s.symptome); };
+    suggestionsEl.appendChild(chip);
+  });
+}
+
+function fiche(s) {
+  let html = `<div class="fiche"><h2>${s.symptome}</h2>`;
+
+  html += `<div class="section-label">Systèmes impliqués</div>`;
+  s.systemes_impliques.forEach(sys => {
+    html += `<div class="systeme-row">
+      <div class="systeme-name">${sys.systeme}</div>
+      <div>
+        <div class="systeme-mecanisme">${sys.mecanisme}</div>
+        <span class="source-tag">${sys.module_source}</span>
+      </div>
+    </div>`;
+  });
+
+  if (s.decodage_biologique && s.decodage_biologique.length) {
+    html += `<div class="section-label">Décodage biologique</div>`;
+    s.decodage_biologique.forEach(d => {
+      html += `<div class="decodage">${d.sens}<span class="source-tag">${d.module_source}</span></div>`;
+    });
+  }
+
+  html += `<div class="section-label">Remèdes par catégorie</div>`;
+  const remedes = s.remedes;
+  let anyRemede = false;
+  for (const [key, label] of Object.entries(LABELS)) {
+    const items = remedes[key];
+    if (items && items.length) {
+      anyRemede = true;
+      html += `<div class="remede-cat"><div class="remede-cat-title">${label}</div>`;
+      items.forEach(item => {
+        const parts = Object.entries(item).filter(([k]) => k !== 'module_source');
+        html += `<div class="remede-item">${parts.map(([k,v],i) => i===0 ? `<b>${v}</b>` : v).join(' — ')}<span class="source-tag">${item.module_source}</span></div>`;
+      });
+      html += `</div>`;
+    }
+  }
+  if (!anyRemede) {
+    html += `<div class="no-data">Aucun remède catégorisé trouvé pour ce symptôme dans les modules actuels.</div>`;
+  }
+  if (remedes.a_completer) {
+    html += `<div class="no-data">À compléter : ${remedes.a_completer}</div>`;
+  }
+
+  html += `</div>`;
+  return html;
+}
+
+function renderResults(query) {
+  resultsEl.innerHTML = '';
+  emptyEl.innerHTML = '';
+  if (!query) { renderSuggestions(''); return; }
+  const matches = DATA.symptomes.filter(s => norm(s.symptome).includes(norm(query)));
+  renderSuggestions(query);
+  if (!matches.length) {
+    emptyEl.innerHTML = `Aucun symptôme trouvé pour « ${query} » dans cette v1 (11 symptômes seulement pour l'instant).`;
+    return;
+  }
+  matches.forEach(s => { resultsEl.innerHTML += fiche(s); });
+}
+
+searchInput.addEventListener('input', e => renderResults(e.target.value.trim()));
+renderSuggestions('');
+</script>
+
+</body>
+</html>
